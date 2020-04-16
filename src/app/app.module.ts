@@ -13,6 +13,7 @@ import { ShoppingeditComponent } from './shoppinglist/shoppingedit/shoppingedit.
 import { BasicHighLightDirective } from './customDirectives/basic-highlight-directive';
 import { BetterHighLightDirective } from './customDirectives/better-highlight-directive';
 import { DropDownDirective } from './customDirectives/dropdown-directive';
+import { ShoppingListService } from './shoppinglist/shoppinglist.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { DropDownDirective } from './customDirectives/dropdown-directive';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ShoppingListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
