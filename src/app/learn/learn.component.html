@@ -1,0 +1,13 @@
+<button class="btn btn-sm btn-primary" [disabled]="buttonState" (click)="onClickBtn">click</button>
+<!--Interpolation fails with booleans:-->
+<input type="text" value={{name}} id="input1" disabled={{flag}} />
+
+<br>
+
+<!--We only use property binding to set non string value -->
+<!--PropertyBinding:-->
+<input type="text" [value]='lastName' id="input2" [disabled]='flag' />
+
+<br>
+
+<h6 [ngStyle]="{backgroundColor: getColor()}">kranthi</h6>

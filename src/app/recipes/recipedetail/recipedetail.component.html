@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-xs-12">
+    <img src={{recipe.img}} alt={{recipe.name}} style="max-height: 50px;">
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <h1 class="list-group-heading">
+      {{recipe.name}}
+    </h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="dropdown" appDropdown>
+      <button class="btn btn-primary dropdown-toggle" type="button">Manage Recipe
+      <span class="caret"></span></button>
+      <ul class="dropdown-menu">
+        <li><a href="#">To shopping list</a></li>
+        <li><a href="#">Edit Recipe</a></li>
+        <li><a href="#">Delete Recipe</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-sm-12">
+    {{recipe.desc}}
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    Ingedients
+  </div>
+</div>
