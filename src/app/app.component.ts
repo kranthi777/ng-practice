@@ -6,13 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ng-practice';
-  showShoppingListComponent:boolean = false;
-  onNavigate(feature):void{
-    if (feature === 'shoppingList') {
-      this.showShoppingListComponent = true;
-    } else {
-      this.showShoppingListComponent = false;
-    }
-  }
 }
