@@ -1,6 +1,7 @@
 import { RecipeService } from './../recipe.service';
 import { Recipe } from './../recipe.modal';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-recipelist',
@@ -8,16 +9,18 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./recipelist.component.css']
 })
 export class RecipelistComponent implements OnInit {
-  //@Output() recipeItem = new EventEmitter<Recipe>();
   recipes: Recipe[];
   
-  constructor(private recipeService: RecipeService) {
+  constructor(private recipeService: RecipeService, private router: Router, private route: ActivatedRoute) {
     //console.log(this.recipes);
     this.recipes = recipeService.getRecipes();
-
   }
 
   ngOnInit(): void {
+  }
+
+  onNewRecipe(): void {
+    this.router.navigate(['new'], {relativeTo: this.route})
   }
 
 }

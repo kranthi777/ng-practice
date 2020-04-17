@@ -14,6 +14,9 @@ import { BasicHighLightDirective } from './customDirectives/basic-highlight-dire
 import { BetterHighLightDirective } from './customDirectives/better-highlight-directive';
 import { DropDownDirective } from './customDirectives/dropdown-directive';
 import { ShoppingListService } from './shoppinglist/shoppinglist.service';
+import { AppRoutingModule } from './app.routing.module';
+import { RecipestartComponent } from './recipes/recipestart/recipestart.component';
+import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 
 @NgModule({
   declarations: [
@@ -28,11 +31,14 @@ import { ShoppingListService } from './shoppinglist/shoppinglist.service';
     ShoppingeditComponent,
     BasicHighLightDirective,
     BetterHighLightDirective,
-    DropDownDirective
+    DropDownDirective,
+    RecipestartComponent,
+    RecipeEditComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [ShoppingListService],
   bootstrap: [AppComponent]

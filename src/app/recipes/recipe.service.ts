@@ -29,4 +29,8 @@ export class RecipeService {
   addIngredients(ingredients: Ingredients[]) {
     this.slservice.addIngredients(ingredients);
   }
+
+  getRecipeById(id: number) {
+    return this.recipes[id];
+  }
 }
