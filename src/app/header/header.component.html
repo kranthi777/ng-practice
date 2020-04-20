@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" appBetterHighLight>Recipe</a>
+      <a class="navbar-brand" routerLink="/" appBetterHighLight>Recipe</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
@@ -13,8 +13,8 @@
           <a class="dropdown-toggle" data-toggle="dropdown">Manage
           <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a>save data</a></li>
-            <li><a>fetch data</a></li>
+            <li><a (click)="onSaveData()">Save data</a></li>
+            <li><a (click)="onFetchData()">Fetch data</a></li>
           </ul>
         </li>
       </ul>

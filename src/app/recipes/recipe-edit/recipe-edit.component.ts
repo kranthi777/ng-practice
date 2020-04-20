@@ -75,7 +75,10 @@ export class RecipeEditComponent implements OnInit {
     return (<FormArray>this.recipeForm.get('ingredients')).controls;
   }
 
-  addIngredient() {
+  addIngredient(event) {
+
+    //doing this because this event is getting bubbled and onSubmit handler is getting called
+    event.preventDefault();
     (<FormArray>this.recipeForm.get('ingredients')).push(
       new FormGroup({
         'name': new FormControl(null, Validators.required),
