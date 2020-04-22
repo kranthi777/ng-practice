@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { catchError, tap } from 'rxjs/operators';
 import { throwError, BehaviorSubject } from 'rxjs';
 import { User } from './user.model';
+import { environment } from '../../environments/environment';
 
 //signup response from api
 interface AuthSignUpResponseData {
@@ -34,7 +35,7 @@ export class AuthService {
   signup(email: string, password: string) {
     return this.http
       .post<AuthSignUpResponseData>(
-        'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyB1aLV2qfsqLL-DcNTzYc52QlxlP6F32pI',
+        'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=' + environment.apiKey,
         {
           email: email,
           password: password,
@@ -58,7 +59,7 @@ export class AuthService {
   login(email:string, password: string) {
     return this.http
       .post<AuthLoginResponseData>(
-        'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyB1aLV2qfsqLL-DcNTzYc52QlxlP6F32pI',
+        'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' + environment.apiKey,
         {
           email: email,
           password: password,

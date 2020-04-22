@@ -1,9 +1,14 @@
 <nav class="navbar navbar-default navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
+      <button type="button" class="navbar-toggle" (click)="onToggle()">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
       <a class="navbar-brand" routerLink="/" appBetterHighLight>Recipe</a>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
+    <div [ngClass]="{'collapse': isNavbarCollapse === true}" class="navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li routerLinkActive="active" *ngIf="!isAuthenticated"><a routerLink="/auth">Authentication</a></li>
         <li routerLinkActive="active" *ngIf="isAuthenticated"><a routerLink="/recipes">Recipes</a></li>

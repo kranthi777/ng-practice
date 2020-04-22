@@ -11,6 +11,7 @@ import { AuthService } from '../auth/auth.service';
 export class HeaderComponent implements OnInit {
   isAuthenticated = false;
   private userSub: Subscription;
+  isNavbarCollapse: boolean = true;
   constructor(private dataStrorageService:DataStorageService, private authService: AuthService) { }
 
   ngOnInit(): void {
@@ -32,6 +33,11 @@ export class HeaderComponent implements OnInit {
 
   onLogout() {
     this.authService.logout();
+  }
+
+  onToggle() {
+    //for smaller devices navbar is collapsable
+    this.isNavbarCollapse = !this.isNavbarCollapse;
   }
 
   ngOnDestroy() {
